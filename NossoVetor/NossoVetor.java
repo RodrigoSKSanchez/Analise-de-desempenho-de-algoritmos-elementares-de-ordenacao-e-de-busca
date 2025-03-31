@@ -3,8 +3,8 @@ import java.util.Random;
 public class NossoVetor {
     private int ocupacao;
     private int[] vetor;
-    private int comparacoes;
-    private int trocas;
+    private long comparacoes;
+    private long trocas;
 
     public NossoVetor(int tamanho) {
         vetor = new int[tamanho];
@@ -170,11 +170,11 @@ public class NossoVetor {
         return -1;
     }
 
-    public int getComparacoes() {
+    public long getComparacoes() {
         return comparacoes;
     }
 
-    public int getTrocas() {
+    public long getTrocas() {
         return trocas;
     }
 }
