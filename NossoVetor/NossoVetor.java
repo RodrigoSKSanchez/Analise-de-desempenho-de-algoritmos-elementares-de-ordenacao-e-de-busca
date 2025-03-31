@@ -143,6 +143,8 @@ public class NossoVetor {
                 trocas++;
             }
             vetor[i + 1] = x;
+            comparacoes++;
+            // essa comparação serve para o caso quando o vetor[i] <= x
         }
     }
 

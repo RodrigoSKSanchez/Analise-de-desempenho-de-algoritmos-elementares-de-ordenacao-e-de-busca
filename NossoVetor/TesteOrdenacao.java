@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.Random;
 import java.util.Scanner;
 
 public class TesteOrdenacao {
@@ -6,7 +7,7 @@ public class TesteOrdenacao {
         Scanner scanner = new Scanner(System.in);
 
         // Tamanhos de vetores a serem testados
-        int[] tamanhos = {100_000};
+        int[] tamanhos = {200_000};
 
         // Número de repetições para reduzir flutuações
         int repeticoes = 3;
@@ -43,15 +44,21 @@ public class TesteOrdenacao {
                 fim = new Date().getTime();
                 System.out.println("Insertion Sort - Tempo: " + (fim - ini) + "ms, Comparações/Trocas: " + v.getComparacoes() + "/" + v.getTrocas());
 
+
+                v.preencheVetor();
+                Random random = new Random();
                 // Testando Busca Linear
                 v.resetaContadores();
                 ini = new Date().getTime();
+                v.buscaLinear(random.nextInt(v.getTamanho() * 10));
                 fim = new Date().getTime();
                 System.out.println("Busca Linear - Tempo: " + (fim - ini) + "ms, Comparações: " + v.getComparacoes());
 
                 // Testando Busca Binária (após ordenação)
-                v.resetaContadores();
                 ini = new Date().getTime();
+                v.insertionSort();
+                v.resetaContadores();
+                v.buscaBinaria(random.nextInt(v.getTamanho() * 10));
                 fim = new Date().getTime();
                 System.out.println("Busca Binária - Tempo: " + (fim - ini) + "ms, Comparações: " + v.getComparacoes());
             }
