@@ -7,16 +7,16 @@ public class TesteOrdenacao {
         Scanner scanner = new Scanner(System.in);
 
         // Tamanhos de vetores a serem testados
-        int[] tamanhos = {200_000};
+        int[] tamanhos = {100_000};
 
         // Número de repetições para reduzir flutuações
         int repeticoes = 3;
 
         for (int tamanho : tamanhos) {
-            System.out.println("\n➡ Testando com vetor de tamanho: " + tamanho);
+            System.out.println("\nTestando com vetor de tamanho: " + tamanho);
 
             for (int i = 0; i < repeticoes; i++) {
-                System.out.println("\n🔄 Execução " + (i + 1) + " de " + repeticoes);
+                System.out.println("\n Execução " + (i + 1) + " de " + repeticoes);
 
                 NossoVetor v = new NossoVetor(tamanho);
                 v.preencheVetor();
