@@ -108,7 +108,7 @@ public class NossoVetor {
                     int aux = vetor[j];
                     vetor[j] = vetor[j + 1];
                     vetor[j + 1] = aux;
-                    trocas++;
+                    trocas+=3;
                 }
             }
         }
@@ -121,13 +121,16 @@ public class NossoVetor {
             int min = i;
             for (int j = i + 1; j < ocupacao; ++j) {
                 comparacoes++;
-                if (vetor[j] < vetor[min])
+                if (vetor[j] < vetor[min]){
                     min = j;
+                    trocas++;
+                }
+                    
             }
             int x = vetor[i];
             vetor[i] = vetor[min];
             vetor[min] = x;
-            trocas++;
+            trocas+=3;
         }
     }
 
@@ -143,7 +146,7 @@ public class NossoVetor {
                 trocas++;
             }
             vetor[i + 1] = x;
-            comparacoes++;
+            trocas++;
             // essa comparação serve para o caso quando o vetor[i] <= x
         }
     }
@@ -164,6 +167,7 @@ public class NossoVetor {
             int meio = (inicio + fim) / 2;
             if (vetor[meio] == elemento)
                 return meio;
+            comparacoes++;
             if (vetor[meio] < elemento)
                 inicio = meio + 1;
             else

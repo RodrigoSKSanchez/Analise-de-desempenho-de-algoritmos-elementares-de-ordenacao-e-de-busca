@@ -7,7 +7,7 @@ public class TesteOrdenacao {
         Scanner scanner = new Scanner(System.in);
 
         // Tamanhos de vetores a serem testados
-        int[] tamanhos = {100_000};
+        int[] tamanhos = {100000};
 
         // Número de repetições para reduzir flutuações
         int repeticoes = 3;
