@@ -10,7 +10,7 @@ public class TesteOrdenacao {
         int[] tamanhos = {100000};
 
         // Número de repetições para reduzir flutuações
-        int repeticoes = 3;
+        int repeticoes = 30;
 
         for (int tamanho : tamanhos) {
             System.out.println("\nTestando com vetor de tamanho: " + tamanho);
